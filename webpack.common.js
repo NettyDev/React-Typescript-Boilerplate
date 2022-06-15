@@ -25,6 +25,7 @@ module.exports = {
             plugins: [
               '@babel/plugin-proposal-class-properties',
               '@babel/plugin-transform-runtime',
+              '@babel/plugin-syntax-dynamic-import',
             ],
           },
         },
@@ -40,6 +41,7 @@ module.exports = {
               '@babel/plugin-proposal-class-properties',
               '@babel/plugin-transform-typescript',
               '@babel/plugin-transform-runtime',
+              '@babel/plugin-syntax-dynamic-import',
             ],
           },
         },
