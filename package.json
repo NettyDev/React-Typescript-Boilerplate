@@ -1,7 +1,6 @@
 {
   "name": "react-typescript-boilerplate",
   "version": "1.0.0",
-  "types": "./custom.d.ts",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js",
