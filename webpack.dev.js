@@ -4,7 +4,7 @@ const common = require('./webpack.common')
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   devServer: {
     static: path.join(__dirname, 'dist'),
     headers: {
@@ -13,6 +13,7 @@ module.exports = merge(common, {
     historyApiFallback: true,
     compress: true,
     port: 9000,
+    hot: true,
   },
   module: {
     rules: [

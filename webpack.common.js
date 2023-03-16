@@ -16,54 +16,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'swc-loader',
           options: {
-            presets: ['@babel/env', '@babel/react'],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-transform-runtime',
-              '@babel/plugin-syntax-dynamic-import',
-            ],
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+              },
+            },
           },
         },
       },
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/env', '@babel/react', '@babel/preset-typescript'],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-transform-typescript',
-              '@babel/plugin-transform-runtime',
-              '@babel/plugin-syntax-dynamic-import',
-            ],
-          },
-        },
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
-        exclude: /node_modules/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[contenthash].[ext]',
-        },
-      },
-      {
-        test: /\.(mp3|aac)$/,
-        exclude: /node_modules/,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[contenthash].[ext]',
-        },
-      },
-      {
-        test: /\.(mp4|m4a)$/,
+        test: /\.(jpg|jpeg|png|gif|svg|mp3|aac|mp4|m4a)$/,
         exclude: /node_modules/,
         loader: 'file-loader',
         options: {
